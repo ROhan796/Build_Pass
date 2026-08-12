@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>I'm going to HH Goa 2026! 🏄‍♂️</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="I'm going to HH Goa 2026! 🏄" />
+  <meta property="og:description" content="Join the builders. #FrameInGoa" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="{{ image_url }}" />
+  <meta property="og:image:width" content="1080" />
+  <meta property="og:image:height" content="1080" />
+  <meta property="og:url" content="https://hhgoa.app/share/{{ share_id }}" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="I'm going to HH Goa 2026! 🏄" />
+  <meta name="twitter:description" content="{{ name }} got their HH Goa 2026 builder card! #FrameInGoa" />
+  <meta name="twitter:image" content="{{ image_url }}" />
+
+  <!-- Redirect humans to the result page -->
+  <meta http-equiv="refresh" content="0;url=/result?id={{ share_id }}" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0a0a0a;
+      color: #d4d4d4;
+      font-family: sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .loading { font-size: 14px; opacity: 0.6; }
+  </style>
+</head>
+<body>
+  <div class="loading">
+    <p>🏄‍♂️ Loading your HH Goa 2026 card...</p>
+    <p>If you're not redirected, <a href="/result?id={{ share_id }}" style="color: #c5a059;">click here</a>.</p>
+  </div>
+</body>
+</html>

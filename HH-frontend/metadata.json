@@ -1,0 +1,6 @@
+{
+  "name": "HH GOA 2026 - Frame & ID Card Generator",
+  "description": "Zero-friction, bioluminescent Frame & Builder ID Card generator for HH Goa 2026 hackers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

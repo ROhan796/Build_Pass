@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-void: #0a0a0a;
+    --color-deep: #121212;
+    --color-surface: #181818;
+    --color-border: rgba(255, 255, 255, 0.08);
+    --color-gold: #c5a059;
+    --color-gold-dark: #8e723d;
+    --color-phosphor: #c5a059;
+    --color-ember: #e6ca85;
+    --color-sand: #f0db9e;
+    --color-palm: #c5a059;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #d4d4d4;
+    --color-text-ghost: #737373;
+  }
+
+  body {
+    background-color: var(--color-void);
+    color: var(--color-text-secondary);
+    font-family: 'Syne', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display, .font-serif {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Glassmorphism Classes */
+.glass {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(24px) saturate(1.4);
+  -webkit-backdrop-filter: blur(24px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.glass-phosphor, .glass-gold {
+  background: rgba(197, 160, 89, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.glass-ember {
+  background: rgba(230, 202, 133, 0.04);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(230, 202, 133, 0.2);
+}
+
+/* Glow System */
+.glow-phosphor, .glow-gold {
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.35), 0 0 60px rgba(197, 160, 89, 0.15);
+}
+
+.glow-phosphor-lg, .glow-gold-lg {
+  box-shadow: 0 0 30px rgba(197, 160, 89, 0.5), 0 0 90px rgba(197, 160, 89, 0.25);
+}
+
+.glow-ember {
+  box-shadow: 0 0 20px rgba(230, 202, 133, 0.40), 0 0 60px rgba(230, 202, 133, 0.18);
+}
+
+.glow-sand {
+  box-shadow: 0 0 16px rgba(240, 219, 158, 0.30);
+}
+
+/* Text Gradients */
+.text-gradient-phosphor, .text-gradient-gold {
+  background: linear-gradient(135deg, #f0db9e 0%, #c5a059 50%, #8e723d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-sand {
+  background: linear-gradient(135deg, #f0db9e 0%, #c5a059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-ember {
+  background: linear-gradient(135deg, #e6ca85 0%, #a8833b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animations */
+@keyframes cardFlip {
+  0%   { transform: rotateY(-90deg) scale(0.85); opacity: 0; }
+  60%  { transform: rotateY(8deg) scale(1.02); opacity: 1; }
+  80%  { transform: rotateY(-3deg) scale(0.99); }
+  100% { transform: rotateY(0deg) scale(1); }
+}
+
+.card-flip-enter {
+  animation: cardFlip 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 35s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marqueeRight 35s linear infinite;
+}
+
+.animate-marquee-left:hover, .animate-marquee-right:hover {
+  animation-play-state: paused;
+}
+
+@keyframes dashOffset {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.animate-dash {
+  stroke-dasharray: 6;
+  animation: dashOffset 1.5s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060A12;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3050;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00FFC2;
+}
