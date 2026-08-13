@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: hh-backend
+    runtime: docker
+    dockerfilePath: ./HH-backend/Dockerfile
+    dockerContext: ./HH-backend
+    healthCheckPath: /health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: CLERK_SECRET_KEY
+        sync: false
+      - key: CLERK_PUBLISHABLE_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: LOCAL_UPLOAD_DIR
+        value: ./uploads
+      - key: PYTHON_VERSION
+        value: "3.12"
